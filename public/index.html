@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliply — YouTube downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <nav><div class="brand"><span class="brand-mark">▶</span><span>cliply</span></div><span class="nav-note">personal media utility <i></i></span></nav>
+    <section class="hero"><p class="eyebrow">DOWNLOAD / CLIP / KEEP</p><h1>Save the moments<br><em>worth replaying.</em></h1><p class="lede">Paste a YouTube link, choose your format, and get exactly what you need — without the clutter.</p></section>
+    <section class="panel">
+      <label class="url-label" for="url">YouTube URL</label>
+      <div class="url-row"><input id="url" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off"><button id="load" class="load-btn">Load video <span>↗</span></button></div>
+      <div id="status" class="status" aria-live="polite"></div>
+      <div id="video-card" class="video-card hidden"><img id="thumb" alt="Video thumbnail"><div><span class="tag">VIDEO READY</span><h2 id="title"></h2><p id="meta"></p></div></div>
+      <div class="rule"></div>
+      <div class="options-grid">
+        <div><label>Output</label><div class="segmented"><button class="choice active" data-format="video">Video</button><button class="choice" data-format="audio">Audio only</button></div></div>
+        <div id="quality-wrap"><label>Quality</label><select id="quality"><option value="2160">4K · 2160p</option><option value="1440">2K · 1440p</option><option value="1080" selected>Full HD · 1080p</option><option value="720">HD · 720p</option><option value="480">480p</option><option value="360">360p</option></select></div>
+      </div>
+      <div class="clip-toggle"><div><label class="toggle-label">Clip a section <span class="optional">OPTIONAL</span></label><p>Download only a specific timeline from the video.</p></div><button id="toggle" class="switch" aria-pressed="false"><span></span></button></div>
+      <div id="clip-fields" class="clip-fields hidden"><div><label for="start">Start time</label><input id="start" placeholder="00:00:00" inputmode="numeric"></div><span class="dash">→</span><div><label for="end">End time</label><input id="end" placeholder="00:00:00" inputmode="numeric"></div></div>
+      <button id="download" class="download-btn" disabled><span>↓</span> Download <b id="download-kind">video</b><small>⌘ ↵</small></button>
+      <p class="fineprint">Only download content you have permission to use. This tool runs locally.</p>
+    </section>
+    <footer><span>cliply <small>v1.0</small></span><span>Built for focused downloading</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
